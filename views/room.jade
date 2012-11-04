@@ -1,0 +1,55 @@
+extends layout
+block content
+    div.container
+        div.hero-unit
+            a.titleLink(href="/")
+                h1= title
+                p veta
+        div#tab(class="clear:both;")
+            ul
+                li
+                    a.lang(name="ja",href="#ja") 日本語
+                li
+                    a.lang(name="en",href="#en") English
+                li
+                    a.lang(name="zh-CHS",href="#zh-CHS") 中国的
+            div#ja
+                div.loginUsers.alert-message.block-message.warning
+                    p
+                        strong ログインユーザー :
+                        span #{username}
+                    div.chatDiv
+                        table#ja_tbl(class="chatTable")
+                            tr
+                                th ユーザー名
+                                th 
+                            tr
+            div#en
+                div.loginUsers.alert-message.block-message.warning
+                    p
+                        strong Logged in user :
+                        span #{username}
+                    div.chatDiv
+                        table#en_tbl(class="chatTable")
+                            tr
+                                th user name
+                                th 
+                            tr
+            div#zh-CHS
+                div.loginUsers.alert-message.block-message.warning
+                    p
+                        strong 在用户登录 :
+                        span #{username}
+                    div.chatDiv
+                        table#zh-CHS_tbl(class="chatTable")
+                            tr
+                                th 用户名
+                                th 
+                            tr
+        div.chatArea
+            form
+                input.xlarge.chatText(name="chat", type="text")
+                input.btn.primary.chatBtn(id="send",type="submit", value="送信")
+                input#from(type="hidden", value="ja")
+    input#username(type="hidden", value="#{username}")
+    script(src='javascripts/room.js')
