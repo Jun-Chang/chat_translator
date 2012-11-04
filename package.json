@@ -1,12 +1,9 @@
 {
-  "name": "application-name",
+  "name": "chat-translator",
   "version": "0.0.1",
   "private": true,
-  "scripts": {
-    "start": "node app"
-  },
   "dependencies": {
-    "express": "3.0.0",
+    "express": "3.0.0rc5",
     "jade": "*",
     "socket.io": "0.9.10",
     "stylus": "0.30.1"
